@@ -1,6 +1,6 @@
 
 import { IResolvers } from "graphql-tools";
-
+ 
 const books = [
     {
         id: "Book 1",
@@ -27,7 +27,6 @@ const resolvers: IResolvers = {
   Query: {
     books: () => books,
     bookById: (parent, {id}, {dataSources}, info) => {
-        console.log(id);
         console.log(books.find((book: any) => id === book.title));
         return books.find((book: any) => id === book.title);
     }
