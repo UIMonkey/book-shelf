@@ -1,8 +1,8 @@
 import { useQuery } from "@apollo/client";
-import { IBook } from "../api/book";
 import BookListItem from './book-list-item';
 import { GET_BOOKS } from "../schema/schema";
 import { IBookList } from "../api/book-list";
+import { IVolume } from "../../../api/build";
 
 export const BookList = (props: IBookList) => {
     const { loading, error, data } = useQuery(GET_BOOKS, {
@@ -17,8 +17,8 @@ export const BookList = (props: IBookList) => {
 
     return (
         <div className="col-md-6">
-            {data?.books.map((book: IBook) => (
-            <BookListItem key={book.title} book={book} selectBook={props.handleSelect}></BookListItem>
+            {data?.books.map((book: IVolume) => (
+            <BookListItem key={book?.volumeInfo?.title} book={book} selectBook={props.handleSelect}></BookListItem>
             ))}
         </div>
     )

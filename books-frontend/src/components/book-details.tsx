@@ -1,4 +1,4 @@
-import { IVolume } from "@api/volume";
+import { IVolume } from "../../../api/build";
 import { titleCase } from "../utils/utils";
 
 export const BookDetails = (props: IVolume) => (

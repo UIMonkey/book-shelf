@@ -1,6 +1,6 @@
+import { IVolume } from '../../api/build';
 import { useLazyQuery, useQuery } from '@apollo/client';
 import React from 'react';
-import { IBook } from './api/book';
 import './App.css';
 import BookDetails from './components/book-details';
 import BookList from './components/book-list';
@@ -8,11 +8,11 @@ import { GET_BOOK_DETAILS, GET_GOOGLE_BOOK_DETAILS } from './schema/schema';
 
 
 function App() {
-  const [getBookDetails, { loading, error, data }] = useLazyQuery(GET_GOOGLE_BOOK_DETAILS, {fetchPolicy: 'no-cache'});
+  const [getBookDetails, { loading, error, data }] = useLazyQuery(GET_BOOK_DETAILS, {fetchPolicy: 'no-cache'});
 
-  const selectBook = (book: IBook): void => {
-    getBookDetails({ variables: { id: "Flowers for Algernon" } });
-    console.log("I'm here!", data)
+  const selectBook = (book: IVolume): void => {
+    getBookDetails({ variables: { id: book.id } });
+    console.log("I'm here!", book.id)
   }
 
   return (

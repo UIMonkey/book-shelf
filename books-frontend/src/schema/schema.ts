@@ -3,20 +3,35 @@ import { gql } from "@apollo/client";
 export const GET_BOOKS = gql`
 query {
     books {
+        id
+      selfLink
+      volumeInfo {
         title
-        author
-        genre
+        subtitle
+        authors
+        description
+        imageLinks {
+            smallThumbnail
+        }
+      }
     }
  }
 `
 
 export const GET_BOOK_DETAILS = gql`
 query Book($id: String){
-    bookById(id: $id) {
+    book(id: $id) {
         id
+      selfLink
+      volumeInfo {
         title
-        author
-        genre
+        subtitle
+        authors
+        description
+        imageLinks {
+            smallThumbnail
+        }
+      }
     }
  }
 `

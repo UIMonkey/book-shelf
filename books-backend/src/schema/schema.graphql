@@ -1,6 +1,6 @@
 type Query {  
-    books: [Book]
     bookById(id: String): Book
+    books: [Volume]
     book(id: String): Volume
  }
 

@@ -1,10 +1,10 @@
-import { IBook } from "./book";
+import { IVolume } from "../../../api/build";
 
 export interface IBookList {
-    handleSelect: (book: IBook) => void
+    handleSelect: (book: IVolume) => void
 }
 
 export interface IBookListItem {
-    book: IBook;
-    selectBook: (book: IBook) => void
+    book: IVolume;
+    selectBook: (book: IVolume) => void
 }

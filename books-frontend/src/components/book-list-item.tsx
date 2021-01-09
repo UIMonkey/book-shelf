@@ -4,9 +4,12 @@ import './book-list-item.css';
 
 export const BookListItem = (props: IBookListItem) => (
     <div className="book-list-item" onClick={(_) => props.selectBook(props.book)}>
-        <span className="item-param">{titleCase(props.book.title)}</span>
-        <span className="item-param">{titleCase(props.book.author)}</span>
-        <span className="item-param">{titleCase(props.book.genre)}</span>
+        <img src={props?.book?.volumeInfo?.imageLinks?.smallThumbnail} alt="Book image"></img>
+        <div>
+            <h3 className="item-param">{titleCase(props.book?.volumeInfo?.title)}</h3>
+            {/* <span className="item-param">{titleCase(props.book.volumeInfo?.authors)}</span> */}
+            <span className="item-param">{titleCase(props.book?.volumeInfo?.subtitle)}</span>
+        </div>
     </div>
 )
 
