@@ -1,6 +1,7 @@
 type Query {  
     books: [Book]
     bookById(id: String): Book
+    book(id: String): Volume
  }
 
  type Book {
@@ -8,4 +9,23 @@ type Query {
      title: String
      author: String
      genre: String
+ }
+
+ type Volume {
+     id: String
+     selfLink: String
+     volumeInfo: VolumeInfo
+ }
+
+ type VolumeInfo {
+     title: String
+     subtitle: String
+     authors: [String]
+     description: String
+     imageLinks: ImageLinks
+ }
+
+ type ImageLinks {
+     small: String
+     smallThumbnail: String
  }

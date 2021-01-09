@@ -8,10 +8,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Adrian Scadding",
   "license": "ISC",
   "dependencies": {
     "-": "0.0.1",
+    "apollo-datasource-rest": "^0.9.6",
     "apollo-server-express": "^2.19.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",

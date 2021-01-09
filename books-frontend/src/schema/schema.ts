@@ -20,3 +20,21 @@ query Book($id: String){
     }
  }
 `
+
+export const GET_GOOGLE_BOOK_DETAILS = gql`
+query {
+    book {
+        id
+      selfLink
+      volumeInfo {
+        title
+        subtitle
+        authors
+        description
+        imageLinks {
+            smallThumbnail
+        }
+      }
+    }
+ }
+`

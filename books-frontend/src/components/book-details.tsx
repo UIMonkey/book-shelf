@@ -1,11 +1,13 @@
-import { IBook } from "../api/book";
+import { IVolume } from "@api/volume";
 import { titleCase } from "../utils/utils";
 
-export const BookDetails = (props: IBook) => (
+export const BookDetails = (props: IVolume) => (
     <div className="col-md-6 book-details">
-        <h1>{titleCase(props.title)}</h1>
-        <h4>Author: {titleCase(props.author)}</h4>
-        <h4>{titleCase(props.genre)}</h4>
+        <h1>{titleCase(props?.volumeInfo?.title)}</h1>
+        <img src={props?.volumeInfo?.imageLinks?.smallThumbnail} alt="Book image"></img>
+        {props?.volumeInfo?.authors.map((author: string) => <h4 key={author}>{author} </h4>)}
+        <h4>{titleCase(props?.volumeInfo?.subtitle)}</h4>
+        <p>{props?.volumeInfo?.description}</p>
     </div>
 )
 export default BookDetails;

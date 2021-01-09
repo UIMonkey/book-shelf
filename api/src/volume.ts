@@ -1,9 +1,3 @@
-export interface IBook {
-    title: string;
-    author: string;
-    genre: string;
-}
-
 export interface IVolume {
     id: string;
     selfLink: string

@@ -104,3 +104,4 @@ dist
 .tern-port
 package-lock.json
 books-backend/src/secret/api-key.json
+api/build
