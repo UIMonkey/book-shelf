@@ -32,10 +32,6 @@ const resolvers: IResolvers = {
             return result?.items;
         });
       },
-    bookById: (parent, {id}, {dataSources}, info) => {
-        console.log(books.find((book: any) => id === book.title));
-        return books.find((book: any) => id === book.title);
-    },
     book: async (_source, { id }, { dataSources }) => {
         console.log(id);
         return dataSources.booksAPI.getBook(id);

@@ -4,7 +4,7 @@ import React from 'react';
 import './App.css';
 import BookDetails from './components/book-details';
 import BookList from './components/book-list';
-import { GET_BOOK_DETAILS, GET_GOOGLE_BOOK_DETAILS } from './schema/schema';
+import { GET_BOOK_DETAILS } from './schema/schema';
 
 
 function App() {

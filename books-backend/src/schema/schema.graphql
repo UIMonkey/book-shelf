@@ -1,5 +1,4 @@
 type Query {  
-    bookById(id: String): Book
     books: [Volume]
     book(id: String): Volume
  }
