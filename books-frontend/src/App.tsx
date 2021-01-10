@@ -16,9 +16,9 @@ function App() {
   }
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" style={{height: '100%'}}>
       <h1 style={{ marginBottom: '48px' }}>Books<small style={{ marginLeft: '24px' }}>My Library</small></h1>
-      <div className="row">
+      <div className="row" style={{height: '100%'}}>
         <BookList handleSelect={selectBook} />
         {loading ?
           <div className="col-md-6">
