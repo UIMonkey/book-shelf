@@ -8,7 +8,7 @@ import { GET_BOOK_DETAILS } from './schema/schema';
 
 
 function App() {
-  const [getBookDetails, { loading, error, data }] = useLazyQuery(GET_BOOK_DETAILS, {fetchPolicy: 'no-cache'});
+  const [getBookDetails, { loading, error, data }] = useLazyQuery(GET_BOOK_DETAILS, { fetchPolicy: 'no-cache' });
 
   const selectBook = (book: IVolume): void => {
     getBookDetails({ variables: { id: book.id } });
@@ -17,10 +17,14 @@ function App() {
 
   return (
     <div className="container-fluid">
-      <h1 style={{marginBottom: '48px'}}>Books<small style={{marginLeft: '24px'}}>My Library</small></h1>
+      <h1 style={{ marginBottom: '48px' }}>Books<small style={{ marginLeft: '24px' }}>My Library</small></h1>
       <div className="row">
         <BookList handleSelect={selectBook} />
-        {loading ? <h1>Loading...</h1> : <BookDetails {...data?.book} />}
+        {loading ?
+          <div className="col-md-6">
+            <h1 className="loader"></h1>
+          </div>
+          : <BookDetails {...data?.book} />}
       </div>
     </div>
   );
