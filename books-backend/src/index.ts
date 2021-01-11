@@ -4,6 +4,7 @@ import cors from "cors";
 import schema from "./schema";
 import BooksAPI from "./datasources/books-api";
 import * as secret from './secret/api-key.json';
+import MockBooksAPI from "./test/mock-book-api";
 
 const app = express();
 
@@ -12,7 +13,7 @@ const server = new ApolloServer({
   playground: true,
   dataSources: () => {
     return {
-      booksAPI: new BooksAPI()
+      booksAPI: process.env.NODE_ENV === 'test' ? new MockBooksAPI() : new BooksAPI()
     };
   },
   context: () => {
@@ -29,3 +30,6 @@ server.applyMiddleware({ app, path: "/graphql" });
 app.listen({ port: 8000 }, () => {
   console.log("Apollo Server on http://localhost:8000/graphql");
 });
+
+let result = process.env.NODE_ENV === 'test' ? true : false;
+console.log(result)
