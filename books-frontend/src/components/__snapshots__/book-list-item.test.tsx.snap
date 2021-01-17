@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookListItem It matches the snapshot 1`] = `
+<div
+  class="book-list-item"
+>
+  <img
+    alt="Book image"
+    src=""
+  />
+  <div>
+    <h3
+      class="item-param"
+    >
+      Book1
+    </h3>
+    <span
+      class="item-param"
+    />
+  </div>
+</div>
+`;
