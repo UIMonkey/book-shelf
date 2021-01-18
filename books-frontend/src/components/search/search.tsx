@@ -1,3 +1,5 @@
+import './search.css'
+
 export interface ISearchComponent {
     value: string;
     onChange: () => void;
@@ -6,8 +8,8 @@ export interface ISearchComponent {
 
 const Search = (props: ISearchComponent) => {
     return (
-      <div>
-        <label htmlFor="search">{props.children}</label>
+      <div className="container">
+        <label htmlFor="search" className="search-label">{props.children}</label>
         <input
           id="search"
           type="text"
