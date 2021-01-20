@@ -9,7 +9,7 @@ import Search from './components/search/search';
 
 
 function App() {
-  const [getBookDetails, { loading, data }] = useLazyQuery(GET_BOOK_DETAILS, { fetchPolicy: 'no-cache' });
+  const [getBookDetails, { loading, data }] = useLazyQuery(GET_BOOK_DETAILS);
 
   const selectBook = (book: IVolume): void => {
     getBookDetails({ variables: { id: book.id } });
