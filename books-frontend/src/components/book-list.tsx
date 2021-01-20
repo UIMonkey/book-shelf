@@ -1,13 +1,11 @@
 import { useQuery } from "@apollo/client";
-import BookListItem from './book-list-item';
+import BookListItem from './book-list-item/book-list-item';
 import { GET_BOOKS } from "../schema/schema";
 import { IBookList } from "../api/book-list";
 import { IVolume } from "../../../api/build";
 
 export const BookList = (props: IBookList) => {
-    const { loading, error, data } = useQuery(GET_BOOKS, {
-        pollInterval: 5000,
-    });
+    const { loading, error, data } = useQuery(GET_BOOKS);
 
     if (loading) {
         return (

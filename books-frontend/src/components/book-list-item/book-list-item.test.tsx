@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { IVolume, Volume } from '../../../api/build';
-import { IBookListItem } from '../api/book-list';
+import { IVolume, Volume } from '../../../../api/build';
+import { IBookListItem } from '../../api/book-list';
 import { BookListItem } from './book-list-item';
 
 const testVolume = new Volume('hjskdf', 'This Is My Book');

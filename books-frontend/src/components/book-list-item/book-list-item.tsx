@@ -1,10 +1,14 @@
-import { IBookListItem } from "../api/book-list";
-import { titleCase } from "../utils/utils";
+import { IBookListItem } from "../../api/book-list";
+import { titleCase } from "../../utils/utils";
 import './book-list-item.css';
 
 export const BookListItem = (props: IBookListItem) => (
     <div className="book-list-item" onClick={(_) => props.selectBook(props.book)}>
-        <img src={props?.book?.volumeInfo?.imageLinks?.smallThumbnail} alt="Book"></img>
+        <img
+            src={props?.book?.volumeInfo?.imageLinks?.smallThumbnail}
+            alt="Book"
+            width="64"
+            className="img-rounded book-list-item__img"></img>
         <div>
             <h3 className="item-param" data-testid="title">{titleCase(props.book?.volumeInfo?.title)}</h3>
             {/* <span className="item-param">{titleCase(props.book.volumeInfo?.authors)}</span> */}
