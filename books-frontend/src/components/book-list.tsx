@@ -15,6 +15,12 @@ export const BookList = (props: IBookList) => {
         )
     }
 
+    if (error) {
+        return (
+            <h1>{error}</h1>
+        )
+    }
+
     return (
         <div className="col-md-6" style={{height: '100%', overflow: "auto"}}>
             {data?.books.map((book: IVolume) => (

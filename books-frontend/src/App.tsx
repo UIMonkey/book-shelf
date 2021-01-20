@@ -1,5 +1,5 @@
 import { IVolume } from '../../api/build';
-import { useLazyQuery, useQuery } from '@apollo/client';
+import { useLazyQuery } from '@apollo/client';
 import React from 'react';
 import './App.css';
 import BookDetails from './components/book-details';
@@ -9,7 +9,7 @@ import Search from './components/search/search';
 
 
 function App() {
-  const [getBookDetails, { loading, error, data }] = useLazyQuery(GET_BOOK_DETAILS, { fetchPolicy: 'no-cache' });
+  const [getBookDetails, { loading, data }] = useLazyQuery(GET_BOOK_DETAILS, { fetchPolicy: 'no-cache' });
 
   const selectBook = (book: IVolume): void => {
     getBookDetails({ variables: { id: book.id } });

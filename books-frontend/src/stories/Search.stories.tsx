@@ -9,7 +9,7 @@ export default {
 } as Meta;
 
 export const Default = () => (
-    <Search value={'timmy'} children={'john'} onChange={action('onChange')} />
+    <Search value={''} children={'Search'} onChange={action('onChange')} />
 );
 
 export const DifferentInput = () => (

@@ -6,7 +6,7 @@ export const BookDetails = (props: IVolume) => (
         {!!props.id ?
             <div>
                 <h1>{titleCase(props?.volumeInfo?.title)}</h1>
-                <img src={props?.volumeInfo?.imageLinks?.smallThumbnail} alt="Book image"></img>
+                <img src={props?.volumeInfo?.imageLinks?.smallThumbnail} alt="Book"></img>
                 {props?.volumeInfo?.authors.map((author: string) => <h4 key={author}>{author} </h4>)}
                 <h4>{titleCase(props?.volumeInfo?.subtitle)}</h4>
                 <p>{props?.volumeInfo?.description}</p>
