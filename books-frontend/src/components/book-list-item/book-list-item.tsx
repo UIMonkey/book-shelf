@@ -10,9 +10,8 @@ export const BookListItem = (props: IBookListItem) => (
             width="64"
             className="img-rounded book-list-item__img"></img>
         <div>
-            <h3 className="item-param" data-testid="title">{titleCase(props.book?.volumeInfo?.title)}</h3>
-            {/* <span className="item-param">{titleCase(props.book.volumeInfo?.authors)}</span> */}
-            <span className="item-param" data-testid="subtitle">{titleCase(props.book?.volumeInfo?.subtitle)}</span>
+            <h4 className="item-param" data-testid="title">{titleCase(props.book?.volumeInfo?.title)}</h4>
+            <p className="item-param lead" data-testid="subtitle">{titleCase(props.book?.volumeInfo?.subtitle)}</p>
         </div>
     </div>
 )
