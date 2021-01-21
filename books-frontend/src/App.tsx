@@ -2,7 +2,7 @@ import { IVolume } from '../../api/build';
 import { useLazyQuery } from '@apollo/client';
 import React from 'react';
 import './App.css';
-import BookDetails from './components/book-details';
+import BookDetails from './components/book-details/book-details';
 import BookList from './components/book-list';
 import { GET_BOOK_DETAILS } from './schema/schema';
 import Search from './components/search/search';

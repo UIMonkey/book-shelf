@@ -1,5 +1,5 @@
-import { IVolume } from "../../../api/build";
-import { titleCase } from "../utils/utils";
+import { IVolume } from "../../../../api/build";
+import { titleCase } from "../../utils/utils";
 import './book-details.css';
 
 export const BookDetails = (props: IVolume) => (
@@ -13,7 +13,9 @@ export const BookDetails = (props: IVolume) => (
                     <h1 className="col-md-8">{titleCase(props?.volumeInfo?.title)}</h1>
                 </div>
                 <div className="book__authors-section">
-                    {props?.volumeInfo?.authors.map((author: string) => <h4 className="book__author" key={author}>{author} </h4>)}
+                    {props?.volumeInfo?.authors.map(
+                        (author: string) =>
+                        <h4 className="book__author" key={author}><small>{author}</small></h4>)}
                 </div>
                 <h4>{titleCase(props?.volumeInfo?.subtitle)}</h4>
                 <p>{props?.volumeInfo?.description}</p>
