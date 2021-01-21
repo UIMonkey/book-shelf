@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Search, { ISearchComponent } from './search';
 
 
@@ -20,6 +20,16 @@ describe('Search component tests', () => {
 
     test('It renders the Search component', () => {
         render((searchComponent));
+    });
+
+    test('Label should be displayed', () => {
+        const { getByTestId } = render((searchComponent));
+        expect( getByTestId('search-label')).toHaveTextContent('john');
+    });
+
+    test('Input should be displayed', () => {
+        const { getByTestId } = render((searchComponent));
+        expect( getByTestId('search-input')).toHaveTextContent('timmy');
     });
 
     test('It matches the search snapshot', () => {

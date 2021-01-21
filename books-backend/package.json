@@ -1,26 +1,24 @@
 {
   "name": "books-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend server to poll the Google books API and host the data to the frontend.",
   "main": "index.js",
   "scripts": {
     "start": "ts-node-dev src/index.ts",
     "build": "tsc src/index.ts",
-    "mock": "set NODE_ENV='test'&& ts-node-dev src/index.ts",
+    "mock": "set NODE_ENV=test&& ts-node-dev src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Adrian Scadding",
   "license": "ISC",
   "dependencies": {
-    "-": "0.0.1",
     "apollo-datasource-rest": "^0.9.6",
     "apollo-server-express": "^2.19.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-graphql": "^0.12.0",
     "graphql": "^15.4.0",
-    "save-dev": "0.0.1-security",
     "ts-node-dev": "^1.1.1",
     "typescript": "^4.1.3"
   },

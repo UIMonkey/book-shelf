@@ -11,7 +11,7 @@ export default class BooksAPI extends RESTDataSource {
     request.headers.set('key', this.context.token);
   }
 
-  async getBook(id: string) {
+  async getBook(id: string): Promise<any> {
     return this.get(`volumes/${id}?key=${secret.googleBooksApiKey}`)
   }
 

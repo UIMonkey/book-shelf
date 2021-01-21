@@ -14,13 +14,13 @@ export default class MockBooksAPI extends RESTDataSource {
   }
 
   async getBook(id: string) {
-      console.log(id)
-      return new Promise<Partial<IVolume>[]>((resolve, reject) => books);
+    console.log("mock data yay", id)
+    return new Promise<Partial<IVolume>[]>((resolve, reject) => books);
     // return this.get(`volumes/${id}?key=${secret.googleBooksApiKey}`)
   }
 
   async getVolumesByAuthor(author: string) {
-    console.log(author)
+    console.log("Mock data yay", author)
     // return this.get(`volumes?q=inauthor:${author}&key=${secret.googleBooksApiKey}`)
     return new Promise<Partial<IVolume>[]>((resolve, reject) => books);
   }

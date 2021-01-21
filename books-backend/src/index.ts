@@ -30,6 +30,3 @@ server.applyMiddleware({ app, path: "/graphql" });
 app.listen({ port: 8000 }, () => {
   console.log("Apollo Server on http://localhost:8000/graphql");
 });
-
-let result = process.env.NODE_ENV === 'test' ? true : false;
-console.log(result)

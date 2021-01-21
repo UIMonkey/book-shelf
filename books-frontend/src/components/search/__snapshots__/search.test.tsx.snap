@@ -1,13 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search component tests It matches the search snapshot 1`] = `
-<div>
+<div
+  class="container"
+>
   <label
+    class="search-label"
+    data-testid="search-label"
     for="search"
   >
     john
   </label>
   <input
+    data-testid="search-input"
     id="search"
     type="text"
     value="timmy"

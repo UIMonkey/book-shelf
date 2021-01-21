@@ -5,22 +5,24 @@ exports[`BookListItem It matches the snapshot 1`] = `
   class="book-list-item"
 >
   <img
-    alt="Book image"
+    alt="Book"
+    class="img-rounded book-list-item__img"
     src=""
+    width="64"
   />
   <div>
-    <h3
-      class="item-param"
+    <h4
+      class="book-list-item__param"
       data-testid="title"
     >
       This Is My Book
-    </h3>
-    <span
-      class="item-param"
+    </h4>
+    <p
+      class="book-list-item__param lead"
       data-testid="subtitle"
     >
       I Am Subtitle
-    </span>
+    </p>
   </div>
 </div>
 `;
