@@ -15,7 +15,7 @@ export default class BooksAPI extends RESTDataSource {
     return this.get(`volumes/${id}?key=${secret.googleBooksApiKey}`)
   }
 
-  async getVolumesByAuthor(author: string) {
+  async getVolumesByAuthor(author: string): Promise<any> {
     return this.get(`volumes?q=inauthor:${author}&key=${secret.googleBooksApiKey}`)
   }
 }

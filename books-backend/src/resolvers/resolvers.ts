@@ -16,7 +16,6 @@ const resolvers: IResolvers = {
     books: async (_source, { id }, { dataSources }) => {
       return dataSources.booksAPI.getVolumesByAuthor('Terry Pratchett')
         .then((result: any) => {
-          saveToFile(JSON.stringify(result));
           return result?.items;
         });
     },
