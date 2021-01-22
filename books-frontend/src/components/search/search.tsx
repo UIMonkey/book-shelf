@@ -2,23 +2,21 @@ import './search.css'
 
 export interface ISearchComponent {
   value: string;
-  onChange: () => void;
-  children: string;
+  onChange: (event: React.BaseSyntheticEvent) => void;
+  label: string;
 }
 
 const Search = (props: ISearchComponent) => {
-  const handleChange = (event: any) => {
-    console.log(event.target.value)
-  }
+
   return (
     <div className="container">
-      <label htmlFor="search" data-testid="search-label" className="search-label">{props.children}</label>
+      <label htmlFor="search" data-testid="search-label" className="search-label">{props.label}</label>
       <input
         data-testid="search-input"
         id="search"
         type="text"
         value={props.value}
-        onChange={handleChange}
+        onChange={props.onChange}
       />
     </div>
   );

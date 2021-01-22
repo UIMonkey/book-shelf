@@ -9,9 +9,9 @@ export default {
 } as Meta;
 
 export const Default = () => (
-    <Search value={''} children={'Search'} onChange={action('onChange')} />
+    <Search value={''} label={'Search'} onChange={action('onChange')} />
 );
 
 export const DifferentInput = () => (
-    <Search value={'Snow'} children={'john'} onChange={action('onChange')} />
+    <Search value={'Snow'} label={'john'} onChange={action('onChange')} />
 );
