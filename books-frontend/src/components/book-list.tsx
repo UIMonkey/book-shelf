@@ -1,28 +1,25 @@
-import { useQuery } from "@apollo/client";
 import BookListItem from './book-list-item/book-list-item';
-import { GET_BOOKS } from "../schema/schema";
 import { IBookList } from "../api/book-list";
 import { IVolume } from "../../../api/build";
 
 export const BookList = (props: IBookList) => {
-    const { loading, error, data } = useQuery(GET_BOOKS);
 
-    if (loading) {
+    if (props.loading) {
         return (
             <h1>Loading...</h1>
         )
     }
 
-    if (error) {
+    if (props.error) {
         return (
-            <h1>{error}</h1>
+            <h1>{props.error}</h1>
         )
     }
 
     return (
-        <div className="col-md-6" style={{height: '100%', overflow: "auto"}}>
-            {data?.books.map((book: IVolume) => (
-            <BookListItem key={book?.volumeInfo?.title} book={book} selectBook={props.handleSelect}></BookListItem>
+        <div className="col-md-6" style={{ height: '100%', overflow: "auto" }}>
+            {props?.data?.books.map((book: IVolume) => (
+                <BookListItem key={book?.volumeInfo?.title} book={book} selectBook={props.handleSelect}></BookListItem>
             ))}
         </div>
     )

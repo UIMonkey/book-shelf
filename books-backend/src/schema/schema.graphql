@@ -1,13 +1,6 @@
 type Query {  
-    books: [Volume]
-    book(id: String): Volume
- }
-
- type Book {
-     id: String
-     title: String
-     author: String
-     genre: String
+    book(id: ID): Volume
+    books(author: String): [Volume!]
  }
 
  type Volume {

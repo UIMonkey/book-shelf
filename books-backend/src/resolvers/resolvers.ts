@@ -1,6 +1,7 @@
 
 import { IResolvers } from "graphql-tools";
 import * as fs from 'fs';
+import { IGoogleBookAPIReponse } from "@api/book-query";
 
 const saveToFile = (json: any) => {
   fs.writeFile("./data/book-data.json", json, function (err) {
@@ -13,15 +14,16 @@ const saveToFile = (json: any) => {
 
 const resolvers: IResolvers = {
   Query: {
-    books: async (_source, { id }, { dataSources }) => {
-      return dataSources.booksAPI.getVolumesByAuthor('Terry Pratchett')
-        .then((result: any) => {
-          return result?.items;
-        });
-    },
     book: async (_source, { id }, { dataSources }) => {
       console.log(id);
       return dataSources.booksAPI.getBook(id);
+    },
+    books: async (_source, { author }, { dataSources }) => {
+      console.log(author);
+      return dataSources.booksAPI.getVolumesByAuthor('Terry Pratchett')
+      .then((result: IGoogleBookAPIReponse) => {
+        return result?.items;
+      });;
     },
   },
 };
