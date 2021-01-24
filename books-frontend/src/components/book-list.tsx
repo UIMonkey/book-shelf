@@ -1,18 +1,20 @@
 import BookListItem from './book-list-item/book-list-item';
 import { IBookList } from "../api/book-list";
 import { IVolume } from "../../../api/build";
+import React from 'react';
+import LoadingSpinner from './loading-spinner/loading-spinner';
 
 export const BookList = (props: IBookList) => {
 
     if (props.loading) {
         return (
-            <h1>Loading...</h1>
+            <LoadingSpinner />
         )
     }
 
     if (props.error) {
         return (
-            <h1>{props.error}</h1>
+            <h1>Failed to Fetch</h1>
         )
     }
 

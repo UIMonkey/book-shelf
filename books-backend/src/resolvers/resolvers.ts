@@ -20,7 +20,7 @@ const resolvers: IResolvers = {
     },
     books: async (_source, { author }, { dataSources }) => {
       console.log(author);
-      return dataSources.booksAPI.getVolumesByAuthor('Terry Pratchett')
+      return dataSources.booksAPI.getVolumesByAuthor(author)
       .then((result: IGoogleBookAPIReponse) => {
         return result?.items;
       });;

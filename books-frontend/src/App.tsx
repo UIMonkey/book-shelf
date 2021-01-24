@@ -3,6 +3,7 @@ import { useLazyQuery } from '@apollo/client';
 import React, { useState } from 'react';
 import './App.css';
 import BookDetails from './components/book-details/book-details';
+import { LoadingSpinner } from './components/loading-spinner/loading-spinner';
 import BookList from './components/book-list';
 import { GET_BOOKS, GET_BOOK_DETAILS } from './schema/schema';
 import Search from './components/search/search';
@@ -37,9 +38,7 @@ function App() {
           data={booksQuery.data}
           handleSelect={selectBook} />
         {bookQuery.loading ?
-          <div className="col-md-6">
-            <h1 className="loader"></h1>
-          </div>
+          <LoadingSpinner />
           : <BookDetails {...bookQuery.data?.book} />}
       </div>
 
