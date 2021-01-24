@@ -20,7 +20,7 @@ export const BookList = (props: IBookList) => {
 
     return (
         <div className="col-md-6" style={{ height: '100%', overflow: "auto" }}>
-            {props?.data?.books.map((book: IVolume) => (
+            {props?.data?.books?.map((book: IVolume) => (
                 <BookListItem key={book?.volumeInfo?.title} book={book} selectBook={props.handleSelect}></BookListItem>
             ))}
         </div>

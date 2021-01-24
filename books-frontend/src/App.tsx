@@ -7,6 +7,7 @@ import { LoadingSpinner } from './components/loading-spinner/loading-spinner';
 import BookList from './components/book-list';
 import { GET_BOOKS, GET_BOOK_DETAILS } from './schema/schema';
 import Search from './components/search/search';
+import { useDebounce } from './utils/debounce/debounce';
 
 
 function App() {
@@ -24,8 +25,10 @@ function App() {
     const searchValue = e.target.value;
     // Ensure search does not include special characters
     setSearchValue(e.target.value);
-    getBooks({ variables: { author: searchValue } })
+    debounceSearch(searchValue)
   }
+
+  const debounceSearch = useDebounce((searchValue: string) => getBooks({ variables: { author: searchValue } }), 1000);
 
   return (
     <div className="container-fluid" style={{ height: '100%' }}>
